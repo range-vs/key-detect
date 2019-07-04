@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="model">
+      <UniqueIdentifier>{faf0043d-21f4-42c5-b8ac-f98c9b530ade}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="controller">
+      <UniqueIdentifier>{298af668-15db-4516-8677-84e41e768de5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="view">
+      <UniqueIdentifier>{aa57f593-7daa-49eb-8cec-2b8646d72286}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="view\controls">
+      <UniqueIdentifier>{77b9ea7f-b435-4cff-b6c0-f7a339121cdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="services">
+      <UniqueIdentifier>{3f1b8266-0555-4185-9bec-88a1d373ed65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="services\events">
+      <UniqueIdentifier>{837d73d7-a0a3-4e44-a453-f25ebacb1098}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{9139390a-3f1f-46b7-865c-c089873c5cbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="services\memory">
+      <UniqueIdentifier>{8547c3c5-782e-4f1b-828e-c44ba51828c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="model\data">
+      <UniqueIdentifier>{752cd6f7-7657-42ea-979c-108cc2f583ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="view\hook">
+      <UniqueIdentifier>{4d389aa8-f97f-49a2-9405-056e513770ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resources">
+      <UniqueIdentifier>{27bdcd65-c3ed-4bbf-bc2c-dd95da09e02f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IWindow.h">
+      <Filter>view\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="IInitialize.h">
+      <Filter>services</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleData.h">
+      <Filter>model</Filter>
+    </ClInclude>
+    <ClInclude Include="IEvent.h">
+      <Filter>services\events</Filter>
+    </ClInclude>
+    <ClInclude Include="IConteinerControl.h">
+      <Filter>view\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="ITray.h">
+      <Filter>view\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="RichEdit.h">
+      <Filter>view</Filter>
+    </ClInclude>
+    <ClInclude Include="types.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="Deleter.h">
+      <Filter>services\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="LoaderDll.h">
+      <Filter>services\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="constants.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="IData.h">
+      <Filter>model\data</Filter>
+    </ClInclude>
+    <ClInclude Include="Console.h">
+      <Filter>view</Filter>
+    </ClInclude>
+    <ClInclude Include="Notify.h">
+      <Filter>view</Filter>
+    </ClInclude>
+    <ClInclude Include="IInitControl.h">
+      <Filter>view\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="IHookWindow.h">
+      <Filter>view\hook</Filter>
+    </ClInclude>
+    <ClInclude Include="IControl.h">
+      <Filter>view\hook</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller.h">
+      <Filter>controller</Filter>
+    </ClInclude>
+    <ClInclude Include="IMenu.h">
+      <Filter>view\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="SaveFileDialog.h">
+      <Filter>view</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="About.h">
+      <Filter>view</Filter>
+    </ClInclude>
+    <ClInclude Include="Thunk.h">
+      <Filter>services\memory</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="IWindow.cpp">
+      <Filter>view\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleData.cpp">
+      <Filter>model</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>controller</Filter>
+    </ClCompile>
+    <ClCompile Include="RichEdit.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="LoaderDll.cpp">
+      <Filter>services\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Console.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="Notify.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller.cpp">
+      <Filter>controller</Filter>
+    </ClCompile>
+    <ClCompile Include="SaveFileDialog.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="About.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc">
+      <Filter>resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\resources\icon.ico">
+      <Filter>resources</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

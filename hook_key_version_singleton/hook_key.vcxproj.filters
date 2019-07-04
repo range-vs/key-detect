@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="export.h">
+      <Filter>services</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalHook.h">
+      <Filter>controller</Filter>
+    </ClInclude>
+    <ClInclude Include="IHook.h">
+      <Filter>controller</Filter>
+    </ClInclude>
+    <ClInclude Include="IEvent.h">
+      <Filter>model\events</Filter>
+    </ClInclude>
+    <ClInclude Include="EventCapsLock.h">
+      <Filter>model\events</Filter>
+    </ClInclude>
+    <ClInclude Include="EventAltN.h">
+      <Filter>model\events</Filter>
+    </ClInclude>
+    <ClInclude Include="EventRightPlus.h">
+      <Filter>model\events</Filter>
+    </ClInclude>
+    <ClInclude Include="EventRightEnter.h">
+      <Filter>model\events</Filter>
+    </ClInclude>
+    <ClInclude Include="EventAltO.h">
+      <Filter>model\events</Filter>
+    </ClInclude>
+    <ClInclude Include="EventNumLock.h">
+      <Filter>model\events</Filter>
+    </ClInclude>
+    <ClInclude Include="EventScrollLock.h">
+      <Filter>model\events</Filter>
+    </ClInclude>
+    <ClInclude Include="FactoryEvent.h">
+      <Filter>model\events\factory_method</Filter>
+    </ClInclude>
+    <ClInclude Include="FactoryEventAltN.h">
+      <Filter>model\events\factory_method</Filter>
+    </ClInclude>
+    <ClInclude Include="FactoryEventAltO.h">
+      <Filter>model\events\factory_method</Filter>
+    </ClInclude>
+    <ClInclude Include="FactoryEventCapsLock.h">
+      <Filter>model\events\factory_method</Filter>
+    </ClInclude>
+    <ClInclude Include="FactoryEventScrollLock.h">
+      <Filter>model\events\factory_method</Filter>
+    </ClInclude>
+    <ClInclude Include="FactoryEventNumLock.h">
+      <Filter>model\events\factory_method</Filter>
+    </ClInclude>
+    <ClInclude Include="FactoryEventRightEnter.h">
+      <Filter>model\events\factory_method</Filter>
+    </ClInclude>
+    <ClInclude Include="FactoryEventRightPlus.h">
+      <Filter>model\events\factory_method</Filter>
+    </ClInclude>
+    <ClInclude Include="EventsCreator.h">
+      <Filter>model\events\factory_method\creator</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyEvents.h">
+      <Filter>model\events\factory_method\creator</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="export.cpp">
+      <Filter>services</Filter>
+    </ClCompile>
+    <ClCompile Include="GlobalHook.cpp">
+      <Filter>controller</Filter>
+    </ClCompile>
+    <ClCompile Include="EventCapsLock.cpp">
+      <Filter>model\events</Filter>
+    </ClCompile>
+    <ClCompile Include="EventAltN.cpp">
+      <Filter>model\events</Filter>
+    </ClCompile>
+    <ClCompile Include="EventRightPlus.cpp">
+      <Filter>model\events</Filter>
+    </ClCompile>
+    <ClCompile Include="EventRightEnter.cpp">
+      <Filter>model\events</Filter>
+    </ClCompile>
+    <ClCompile Include="EventAltO.cpp">
+      <Filter>model\events</Filter>
+    </ClCompile>
+    <ClCompile Include="EventNumLock.cpp">
+      <Filter>model\events</Filter>
+    </ClCompile>
+    <ClCompile Include="EventScrollLock.cpp">
+      <Filter>model\events</Filter>
+    </ClCompile>
+    <ClCompile Include="FactoryEventAltN.cpp">
+      <Filter>model\events\factory_method</Filter>
+    </ClCompile>
+    <ClCompile Include="FactoryEventAltO.cpp">
+      <Filter>model\events\factory_method</Filter>
+    </ClCompile>
+    <ClCompile Include="FactoryEventCapsLock.cpp">
+      <Filter>model\events\factory_method</Filter>
+    </ClCompile>
+    <ClCompile Include="FactoryEventScrollLock.cpp">
+      <Filter>model\events\factory_method</Filter>
+    </ClCompile>
+    <ClCompile Include="FactoryEventNumLock.cpp">
+      <Filter>model\events\factory_method</Filter>
+    </ClCompile>
+    <ClCompile Include="FactoryEventRightEnter.cpp">
+      <Filter>model\events\factory_method</Filter>
+    </ClCompile>
+    <ClCompile Include="FactoryEventRightPlus.cpp">
+      <Filter>model\events\factory_method</Filter>
+    </ClCompile>
+    <ClCompile Include="EventsCreator.cpp">
+      <Filter>model\events\factory_method\creator</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyEvents.cpp">
+      <Filter>model\events\factory_method\creator</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="services">
+      <UniqueIdentifier>{849ada69-6c4d-459e-a0c2-54fd62dc01e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="controller">
+      <UniqueIdentifier>{86b89a1f-0de8-4dad-afcf-17d0567d8f83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="model">
+      <UniqueIdentifier>{846abd3a-f086-4b14-85f0-12a97d2b1124}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="model\events">
+      <UniqueIdentifier>{ecbc8cbe-934e-48b7-9b63-ad6a4684e4e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="model\events\factory_method">
+      <UniqueIdentifier>{2ecc404a-4323-4450-964c-48da19f567ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="model\events\factory_method\creator">
+      <UniqueIdentifier>{59f546f5-c9a0-45eb-bf13-1602a1120f86}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="exportdef.def">
+      <Filter>services</Filter>
+    </None>
+  </ItemGroup>
+</Project>
