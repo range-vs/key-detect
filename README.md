@@ -11,3 +11,4 @@ Additional functionality:
 * Full OOP
 * Design Pattern "Factory Method" for hook events
 * DLL with exported classes (COM MS C++ style) with a hook
+* Using smart pointer's
