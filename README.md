@@ -5,6 +5,7 @@ Additional functionality:
 * shift + 'т/n'(ru/en) - switching of the right 'enter' to 'н/y'(ru/en)
 * shift + 'щ/o'(ru/en) - switching of the right '+' to 'осв/jcd'(ru/en)
 
+## Architecture:
 * Full support for the MVC architectural pattern
 * Compliance with SOLID rules
 * Full OOP
