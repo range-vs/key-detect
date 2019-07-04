@@ -1,4 +1,4 @@
-# System Key Interceptor in 0.5
+# System Key Interceptor v 0.5
 
 Catching system key presses (CapsLock, ScrollLock, NumLock). For keyboards without indication of pressing system keys.
 Additional functionality: 
