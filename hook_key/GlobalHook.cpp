@@ -1,4 +1,4 @@
-#include "GlobalHook.h"
+п»ї#include "GlobalHook.h"
 
 void GlobalHook::createEventData(SmartHookWindow wp)
 {
@@ -7,7 +7,7 @@ void GlobalHook::createEventData(SmartHookWindow wp)
 
 LRESULT GlobalHook::MsgProc(int code, WPARAM wParam, LPARAM lParam)
 {
-	KBDLLHOOKSTRUCT hooked_key; // получаем код клавиши 
+	KBDLLHOOKSTRUCT hooked_key; // РїРѕР»СѓС‡Р°РµРј РєРѕРґ РєР»Р°РІРёС€Рё 
 	hooked_key = *((KBDLLHOOKSTRUCT*)lParam);
 	int key = hooked_key.vkCode; 
 
