@@ -1,4 +1,4 @@
-#include "EventsCreator.h"
+﻿#include "EventsCreator.h"
 
 map< KeyEvents, int>EventsCreator::eventsState(EventsCreator::generateEventsState());
 

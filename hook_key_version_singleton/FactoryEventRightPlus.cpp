@@ -1,4 +1,4 @@
-#include "FactoryEventRightPlus.h"
+﻿#include "FactoryEventRightPlus.h"
 
 SmartEvent FactoryEventRightPlus::create()
 {

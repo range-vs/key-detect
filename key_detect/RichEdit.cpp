@@ -1,4 +1,4 @@
-#include "RichEdit.h"
+п»ї#include "RichEdit.h"
 
 LRESULT RichEdit::MsgProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
@@ -22,14 +22,14 @@ LRESULT RichEdit::MsgProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 			
 		case RICH_MENU_COPY:
 		{
-			// количество символов
+			// РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРёРјРІРѕР»РѕРІ
 			CHARRANGE charRange;
 			SendMessage(hwnd, EM_EXGETSEL, NULL, (LPARAM)&charRange);
 			int size = (charRange.cpMax - charRange.cpMin) * 2 + 2;
-			// получаем текст
+			// РїРѕР»СѓС‡Р°РµРј С‚РµРєСЃС‚
 			wstring buf; buf.resize(size);
 			SendMessage(hwnd, EM_GETSELTEXT, NULL, (LPARAM)buf.c_str());
-			// запись в буфер обмена
+			// Р·Р°РїРёСЃСЊ РІ Р±СѓС„РµСЂ РѕР±РјРµРЅР°
 			hglbTextCopyBuf = GlobalAlloc(GMEM_MOVEABLE, buf.size());
 			memcpy(GlobalLock(hglbTextCopyBuf), buf.c_str(), buf.size());
 			GlobalUnlock(hglbTextCopyBuf);

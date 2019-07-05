@@ -1,4 +1,4 @@
-#include "EventRightEnter.h"
+п»ї#include "EventRightEnter.h"
 
 int EventRightEvent::run()
 {
@@ -7,9 +7,9 @@ int EventRightEvent::run()
 		INPUT ip;
 		ip.type = INPUT_KEYBOARD;
 		ip.ki.time = 0;
-		ip.ki.wVk = 0x59; // Н/Y
+		ip.ki.wVk = 0x59; // Рќ/Y
 		ip.ki.dwFlags = 0;
-		SendInput(1, &ip, sizeof(INPUT)); // отправляет нажатие клавиши в верх очереди сообщений
+		SendInput(1, &ip, sizeof(INPUT)); // РѕС‚РїСЂР°РІР»СЏРµС‚ РЅР°Р¶Р°С‚РёРµ РєР»Р°РІРёС€Рё РІ РІРµСЂС… РѕС‡РµСЂРµРґРё СЃРѕРѕР±С‰РµРЅРёР№
 		return 1;
 	}
 	return 0;
@@ -18,6 +18,6 @@ int EventRightEvent::run()
 wstring EventRightEvent::createData()
 {
 	if(isData)
-		return L"Нажат 'enter'(н)\n";
+		return L"РќР°Р¶Р°С‚ 'enter'(РЅ)\n";
 	return L"";
 }

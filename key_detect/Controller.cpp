@@ -1,4 +1,4 @@
-#include "Controller.h"
+п»ї#include "Controller.h"
 
 void Controller::clear()
 {
@@ -26,7 +26,7 @@ void Controller::clearModelAndRichEdit()
 
 void Controller::showAbout()
 {
-	About about(console->getDescriptor(), L"О программе", L"\"Перехватчик системных нажатий\"\nСоздатель: range (Трубников Иван), 2019 v 0.5 (c)");
+	About about(console->getDescriptor(), L"Рћ РїСЂРѕРіСЂР°РјРјРµ", L"\"РџРµСЂРµС…РІР°С‚С‡РёРє СЃРёСЃС‚РµРјРЅС‹С… РЅР°Р¶Р°С‚РёР№\"\nРЎРѕР·РґР°С‚РµР»СЊ: range (РўСЂСѓР±РЅРёРєРѕРІ РРІР°РЅ), 2019 v 0.5 (c)");
 	about.show();
 }
 
@@ -63,7 +63,7 @@ void Controller::init()
 	// send data for dll
 	ev->createEventData(console);
 	// create hook
-	HHOOK hCBTHook = SetWindowsHookEx(WH_KEYBOARD_LL, reinterpret_cast<HOOKPROC>(callbackGlobalHook->getCallbackMethod()), dll->getHinstance(), NULL); // устанавливаем хук на нажатие клавиш
+	HHOOK hCBTHook = SetWindowsHookEx(WH_KEYBOARD_LL, reinterpret_cast<HOOKPROC>(callbackGlobalHook->getCallbackMethod()), dll->getHinstance(), NULL); // СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј С…СѓРє РЅР° РЅР°Р¶Р°С‚РёРµ РєР»Р°РІРёС€
 	ev->setHHook(hCBTHook);
 	// add actions menu
 	console->addMenuAction(CONSOLE_MAINMENU_SAVELOG, function<void()>(std::bind(&Controller::saveModelFromFile, this)));

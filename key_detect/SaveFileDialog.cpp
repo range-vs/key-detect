@@ -1,4 +1,4 @@
-#include "SaveFileDialog.h"
+п»ї#include "SaveFileDialog.h"
 
 SaveFileDialog::SaveFileDialog(HWND hwnd):hwnd(hwnd)
 { 
@@ -9,7 +9,7 @@ bool SaveFileDialog::action()
 {
 	GetModuleFileName(NULL, defaultCatalog, MAX_PATH + 1);
 	pathExe = defaultCatalog;
-	pathExe = pathExe.substr(0, pathExe.find_last_of(L"\\") + 1); // в конце обязательно слеш!
+	pathExe = pathExe.substr(0, pathExe.find_last_of(L"\\") + 1); // РІ РєРѕРЅС†Рµ РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ СЃР»РµС€!
 
 	OPENFILENAME ofn;
 	ZeroMemory(&ofn, sizeof(ofn));

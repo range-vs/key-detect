@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "../key_detect/IHookWindow.h"
 #include "IEvent.h"

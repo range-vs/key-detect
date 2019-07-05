@@ -1,4 +1,4 @@
-#include "FactoryEventRightEnter.h"
+﻿#include "FactoryEventRightEnter.h"
 
 SmartEvent FactoryEventRightEnter::create()
 {

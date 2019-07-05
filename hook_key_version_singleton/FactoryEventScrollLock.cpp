@@ -1,4 +1,4 @@
-#include "FactoryEventScrollLock.h"
+﻿#include "FactoryEventScrollLock.h"
 
 SmartEvent FactoryEventScrollLock::create()
 {

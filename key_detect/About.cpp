@@ -1,4 +1,4 @@
-#include "About.h"
+﻿#include "About.h"
 
 About::About(const HWND& hwnd, const wstring& title, const wstring& message):hwnd(hwnd), title(title), message(message) { }
 

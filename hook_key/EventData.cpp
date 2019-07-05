@@ -1,4 +1,4 @@
-#include "EventData.h"
+﻿#include "EventData.h"
 
 bool EventData::isAltN()
 {

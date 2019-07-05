@@ -1,4 +1,4 @@
-#include "KeyEvents.h"
+﻿#include "KeyEvents.h"
 
 KeyEvents::KeyEvents(int cc, int f): currentCode(cc), flag(f) { }
 

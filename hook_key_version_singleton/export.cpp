@@ -1,4 +1,4 @@
-#include "export.h"
+﻿#include "export.h"
 
 IHook* Export::CreateHook()
 {

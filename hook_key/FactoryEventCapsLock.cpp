@@ -1,4 +1,4 @@
-#include "FactoryEventCapsLock.h"
+﻿#include "FactoryEventCapsLock.h"
 
 SmartEvent FactoryEventCapsLock::create()
 {

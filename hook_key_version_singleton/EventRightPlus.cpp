@@ -1,10 +1,10 @@
-#include "EventRightPlus.h"
+п»ї#include "EventRightPlus.h"
 
 int EventRightPlus::run()
 {
 	if (GlobalHook::getInstance()->isAltO())
 	{
-		std::array<WORD, 3> _key = { 0x4A, 0x43, 0x44 }; // О, С, В
+		std::array<WORD, 3> _key = { 0x4A, 0x43, 0x44 }; // Рћ, РЎ, Р’
 		for (const WORD& k : _key)
 		{
 			INPUT ip;
@@ -12,7 +12,7 @@ int EventRightPlus::run()
 			ip.ki.time = 0;
 			ip.ki.wVk = k;
 			ip.ki.dwFlags = 0;
-			SendInput(1, &ip, sizeof(INPUT)); // отправляет нажатие клавиши в верх очереди сообщений
+			SendInput(1, &ip, sizeof(INPUT)); // РѕС‚РїСЂР°РІР»СЏРµС‚ РЅР°Р¶Р°С‚РёРµ РєР»Р°РІРёС€Рё РІ РІРµСЂС… РѕС‡РµСЂРµРґРё СЃРѕРѕР±С‰РµРЅРёР№
 		}
 		return 1;
 	}
@@ -22,6 +22,6 @@ int EventRightPlus::run()
 wstring EventRightPlus::createData()
 {
 	if (isData)
-		return L"Нажат '+'(осв)\n";
+		return L"РќР°Р¶Р°С‚ '+'(РѕСЃРІ)\n";
 	return L"";
 }

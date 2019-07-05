@@ -1,4 +1,4 @@
-#include "Notify.h"
+п»ї#include "Notify.h"
 
 Notify::Notify(const HWND& hwnd, const wstring& message, const wstring& title, UINT type)
 {
@@ -12,7 +12,7 @@ Notify::Notify(const HWND& hwnd, const wstring& message, const wstring& title, U
 	nid.uCallbackMessage = WM_RBUTTONMENU;
 	wcscpy_s(nid.szInfo, message.c_str());
 	//nid.dwState = NIS_HIDDEN;
-	nid.dwInfoFlags = NIIF_NOSOUND; // красивый вывод, Отключаем звук уведомлений
+	nid.dwInfoFlags = NIIF_NOSOUND; // РєСЂР°СЃРёРІС‹Р№ РІС‹РІРѕРґ, РћС‚РєР»СЋС‡Р°РµРј Р·РІСѓРє СѓРІРµРґРѕРјР»РµРЅРёР№
 	wcscpy_s(nid.szTip, title.c_str());
 	Shell_NotifyIcon(type, &nid);
 }

@@ -1,4 +1,4 @@
-#include "FactoryEventAltN.h"
+﻿#include "FactoryEventAltN.h"
 
 SmartEvent FactoryEventAltN::create()
 {

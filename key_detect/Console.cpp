@@ -1,4 +1,4 @@
-#include "Console.h"
+п»ї#include "Console.h"
 
 LRESULT Console::MsgProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
@@ -10,12 +10,12 @@ LRESULT Console::MsgProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 		{
 		case WM_RBUTTONUP:
 		{
-			// активизирует окно
+			// Р°РєС‚РёРІРёР·РёСЂСѓРµС‚ РѕРєРЅРѕ
 			SetForegroundWindow(hwnd);
-			// Извлекаем координаты курсора мыши
+			// РР·РІР»РµРєР°РµРј РєРѕРѕСЂРґРёРЅР°С‚С‹ РєСѓСЂСЃРѕСЂР° РјС‹С€Рё
 			POINT pt;
-			GetCursorPos(&pt); // т.к. кооринаты не передаются в функцию, берём напрямую
-			// Отображаем меню
+			GetCursorPos(&pt); // С‚.Рє. РєРѕРѕСЂРёРЅР°С‚С‹ РЅРµ РїРµСЂРµРґР°СЋС‚СЃСЏ РІ С„СѓРЅРєС†РёСЋ, Р±РµСЂС‘Рј РЅР°РїСЂСЏРјСѓСЋ
+			// РћС‚РѕР±СЂР°Р¶Р°РµРј РјРµРЅСЋ
 			TrackPopupMenu(contextMenu,TPM_RIGHTBUTTON |TPM_TOPALIGN |TPM_LEFTALIGN,pt.x,pt.y, 0, hwnd, NULL);
 			break;
 		}
@@ -49,14 +49,14 @@ LRESULT Console::MsgProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 		{
 		case SIZE_MINIMIZED:
 		{
-			//addNotify("Свернуто", titleNotify, NIM_MODIFY);
+			//addNotify("РЎРІРµСЂРЅСѓС‚Рѕ", titleNotify, NIM_MODIFY);
 			ShowWindow(hwnd, SW_HIDE);
 			break;
 		}
 
 		case SIZE_RESTORED:
 		{
-			//addNotify("Развёрнуто", titleNotify, NIM_MODIFY);
+			//addNotify("Р Р°Р·РІС‘СЂРЅСѓС‚Рѕ", titleNotify, NIM_MODIFY);
 			break;
 		}
 		}
@@ -106,7 +106,7 @@ LRESULT Console::MsgProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 	case WM_DESTROY:
 	{
-		addNotify(L"Завершено", titleNotify, NIM_DELETE);
+		addNotify(L"Р—Р°РІРµСЂС€РµРЅРѕ", titleNotify, NIM_DELETE);
 		PostQuitMessage(0);
 		DestroyMenu(contextMenu);
 		break;
@@ -116,7 +116,7 @@ LRESULT Console::MsgProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 	default:
 	{
 		if (message == msgTaskbarRestart)
-			addNotify(L"Запущен", titleNotify, NIM_ADD);
+			addNotify(L"Р—Р°РїСѓС‰РµРЅ", titleNotify, NIM_ADD);
 		break;
 	}
 
@@ -151,7 +151,7 @@ void Console::init(HWND main, HINSTANCE hInst)
 	AppendMenu(contextMenu, MF_SEPARATOR, -1, L"");
 	AppendMenu(contextMenu, MF_STRING, CONSOLE_MENU_EXIT, L"Exit");
 
-	addNotify(L"Запущен", titleNotify, NIM_ADD);
+	addNotify(L"Р—Р°РїСѓС‰РµРЅ", titleNotify, NIM_ADD);
 
 	msgTaskbarRestart = RegisterWindowMessage(L"TaskbarCreated");
 }

@@ -1,11 +1,11 @@
-#include "EventAltO.h"
+ï»¿#include "EventAltO.h"
 
 int EventAltO::run(SmartEventData gh)
 {
 	if (GetKeyState(160) & 0x80 || GetKeyState(161) & 0x80)
 	{
-		data = L"Íàæàòà êîìáèíàöèÿ alt + O\n";
-		data += gh->isAltO() ? L"\nÏðàâûé \"+\" âíîâü ñîîòâåòñòâóåò ñâîåìó çíà÷åíèþ\n" : L"\nÏðàâûé \"+\" èçìåíèë ñâî¸ çíà÷åíèå íà \"îñâ\"\n";
+		data = L"ÐÐ°Ð¶Ð°Ñ‚Ð° ÐºÐ¾Ð¼Ð±Ð¸Ð½Ð°Ñ†Ð¸Ñ alt + O\n";
+		data += gh->isAltO() ? L"\nÐŸÑ€Ð°Ð²Ñ‹Ð¹ \"+\" Ð²Ð½Ð¾Ð²ÑŒ ÑÐ¾Ð¾Ñ‚Ð²ÐµÑ‚ÑÑ‚Ð²ÑƒÐµÑ‚ ÑÐ²Ð¾ÐµÐ¼Ñƒ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸ÑŽ\n" : L"\nÐŸÑ€Ð°Ð²Ñ‹Ð¹ \"+\" Ð¸Ð·Ð¼ÐµÐ½Ð¸Ð» ÑÐ²Ð¾Ñ‘ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð½Ð° \"Ð¾ÑÐ²\"\n";
 		gh->switchAltO();
 		time_t seconds = time(NULL);
 		tm timeinfo;
@@ -13,7 +13,7 @@ int EventAltO::run(SmartEventData gh)
 		char buf[500];
 		asctime_s(buf, 500, &timeinfo);
 		//data += buf;
-		gh->getWindow()->addNotify(data, L"Óâåäîìëåíèå", NIM_MODIFY);
+		gh->getWindow()->addNotify(data, L"Ð£Ð²ÐµÐ´Ð¾Ð¼Ð»ÐµÐ½Ð¸Ðµ", NIM_MODIFY);
 	}
 	return 0;
 }

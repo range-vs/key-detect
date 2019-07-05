@@ -1,13 +1,13 @@
-#include "EventScrollLock.h"
+ï»¿#include "EventScrollLock.h"
 
 int EventScrollLock::run()
 {
-	data = L"Íàæàòà êëàâèøà Scroll Lock\n";
+	data = L"ÐÐ°Ð¶Ð°Ñ‚Ð° ÐºÐ»Ð°Ð²Ð¸ÑˆÐ° Scroll Lock\n";
 	if ((GetKeyState(VK_SCROLL) && 1) == 0)
-		data += L"Êëàâèøà àêòèâèðîâàíà\n";
+		data += L"ÐšÐ»Ð°Ð²Ð¸ÑˆÐ° Ð°ÐºÑ‚Ð¸Ð²Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð°\n";
 	else
-		data += L"Êëàâèøà äåàêòèâèðîâàíà\n";
-	GlobalHook::getInstance()->getWindow()->addNotify(data, L"Óâåäîìëåíèå", NIM_MODIFY);
+		data += L"ÐšÐ»Ð°Ð²Ð¸ÑˆÐ° Ð´ÐµÐ°ÐºÑ‚Ð¸Ð²Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð°\n";
+	GlobalHook::getInstance()->getWindow()->addNotify(data, L"Ð£Ð²ÐµÐ´Ð¾Ð¼Ð»ÐµÐ½Ð¸Ðµ", NIM_MODIFY);
 	return 0;
 }
 

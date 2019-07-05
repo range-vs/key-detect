@@ -1,4 +1,4 @@
-#include "LoaderDll.h"
+﻿#include "LoaderDll.h"
 
 LoaderDll::LoaderDll(const wchar_t* path): path(path)
 {

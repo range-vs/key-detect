@@ -1,4 +1,4 @@
-#include "ConsoleData.h"
+﻿#include "ConsoleData.h"
 
 ConsoleData::ConsoleData(const ConsoleData& cd)
 {

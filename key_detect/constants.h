@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #define RICH_MENU_COPY 101
 #define RICH_MENU_SELECTALL 102

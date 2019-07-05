@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "FactoryEventAltN.h"
 #include "FactoryEventAltO.h"

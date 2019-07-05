@@ -1,4 +1,4 @@
-#include "Thunk.h"
+﻿#include "Thunk.h"
 
 ThunkCreator::ThunkCreator(const ThunkCreator& tc)
 {

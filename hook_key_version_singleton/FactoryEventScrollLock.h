@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "FactoryEvent.h"
 #include "EventScrollLock.h"
