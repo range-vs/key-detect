@@ -13,7 +13,8 @@ void Controller::saveModelFromFile()
 	{
 		sendDataForConsole();
 		wofstream file(saveFileDialog.getPath());
-		file.imbue(locale("rus_rus.1251"));
+		locale ruLocale("rus_rus.1251");
+		file.imbue(ruLocale);
 		copy(model->getData().begin(), model->getData().end(), std::ostream_iterator<wstring, wchar_t>(file)); 
 	}
 }
@@ -35,7 +36,8 @@ void Controller::errorClear()
 	DestroyWindow(console->getDescriptor());
 }
 
-Controller::Controller(HINSTANCE hInst):richEditConsole(new RichEdit()), console(new Console()), hInst(hInst), model(new ConsoleData()){ }
+Controller::Controller(HINSTANCE hInst):richEditConsole(new RichEdit()), console(new Console()), hInst(hInst), model(new ConsoleData()),
+hProc(NULL), hCBTHook(NULL){ }
 
 void Controller::init()
 {
@@ -106,3 +108,5 @@ Controller::~Controller()
 {
 	this->clear();
 }
+
+// TODO: тест - попробовать вызывать GetSaveFileName (со своим классом) в отдельном потоке

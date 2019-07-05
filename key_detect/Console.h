@@ -18,7 +18,7 @@ class Console : public IHookWindow
 	SmartThunkCreator callbackWndProc;
 
 public:
-	Console():msgTaskbarRestart(-1), titleNotify(L"Осведомитель нажатий системных клавиш"){}
+	Console():msgTaskbarRestart(-1), titleNotify(L"Осведомитель нажатий системных клавиш"), mainMenu(NULL), contextMenu(NULL), hwnd(NULL){}
 	LRESULT MsgProc(HWND, UINT, WPARAM, LPARAM);
 	void init(HWND main, HINSTANCE hInst);
 	void addNotify(const wstring& message, const wstring& title, UINT type);

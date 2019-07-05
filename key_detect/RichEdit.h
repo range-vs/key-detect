@@ -21,6 +21,7 @@ class RichEdit : public IControl
 	SmartThunkCreator callbackWndProc;
 
 public:
+	RichEdit():OldWndProc(NULL), hwnd(NULL), hglbTextCopyBuf(NULL), contextMenu(NULL){}
 	LRESULT MsgProc(HWND, UINT, WPARAM, LPARAM);
 	void init(HWND, HINSTANCE);
 	void addData(SmartConsoleData);
