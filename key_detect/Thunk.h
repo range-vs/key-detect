@@ -1,5 +1,13 @@
 #pragma once
 
+#include "stdafx.h"
+#include "Deleter.h"
+
+class ThunkCreator;
+
+using SmartThunkCreator = shared_ptr<ThunkCreator>;
+
+
 struct Thunk
 {
 #pragma pack(push, 1)
@@ -11,20 +19,32 @@ struct Thunk
 #pragma pack(pop)
 };
 
-class CustomCast
+class ThunkCreator
 {
+	Thunk* callbackMethod;
+
 public:
-	 template<typename Target, typename Source>
-	 static Target brute_cast(const Source);
+	ThunkCreator():callbackMethod(nullptr){}
+	ThunkCreator(const ThunkCreator&);
+	ThunkCreator& operator=(const ThunkCreator&);
+	template<class This, class Method> void createNonStaticCallbackFunction(This thisClass, Method callbackMethod);
+	Thunk* getCallbackMethod();
+	~ThunkCreator();
 };
 
-template<typename Target, typename Source>
-inline Target CustomCast::brute_cast(const Source s)
+template<class This, class Method>
+inline void ThunkCreator::createNonStaticCallbackFunction(This thisClass, Method callMeth)
 {
-	if (sizeof(Target) == sizeof(Source))
-		OutputDebugString(L"Types size is are identical!\n");
-	union { Target t; Source s; } u;
-	u.s = s;
-	return u.t;
+	callbackMethod = reinterpret_cast<Thunk*>(VirtualAlloc(NULL, sizeof(Thunk), MEM_COMMIT, PAGE_EXECUTE_READWRITE));
+	if (!callbackMethod)
+		throw wstring(L"Error alloc memory for hook proc!");
+	callbackMethod->stub1 = 0x0D8D;
+	callbackMethod->nThisPtr = reinterpret_cast<unsigned long>(thisClass);
+	callbackMethod->stub2 = 0xB8;
+	callbackMethod->nJumpProc = CustomCast::brute_cast<unsigned long>(callMeth);
+	callbackMethod->stub3 = 0xE0FF;
+	FlushInstructionCache(GetCurrentProcess(), callbackMethod, sizeof(Thunk));
 }
+
+
 

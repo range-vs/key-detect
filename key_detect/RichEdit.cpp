@@ -88,8 +88,10 @@ void RichEdit::init(HWND main, HINSTANCE hInst)
 	GetClientRect(main, &rect);
 	// create window
 	hwnd = CreateWindowEx(NULL, L"RICHEDIT20W", L"", WS_CHILD | WS_VISIBLE | ES_MULTILINE | WS_VSCROLL, rect.left, rect.top, rect.right, rect.bottom, main, 0, hInst, 0);
-	OldWndProc = (WNDPROC)SetWindowLongPtr(hwnd, GWLP_WNDPROC, (LONG_PTR)WndProc);
-	SetWindowLongPtr(hwnd, GWLP_USERDATA, (LONG_PTR)this);
+	// change wnd proc
+	callbackWndProc.reset(new ThunkCreator());
+	callbackWndProc->createNonStaticCallbackFunction(this, &RichEdit::MsgProc);
+	OldWndProc = (WNDPROC)SetWindowLongPtr(hwnd, GWL_WNDPROC, (LONG_PTR)callbackWndProc->getCallbackMethod());
 	// change font
 	HFONT fnt = CreateFont(16, 0, 0, 0, 1000, 0, 0, 0, ANSI_CHARSET, 1000, 0, 0, 0, L"Times New Roman");
 	SendMessage(hwnd, WM_SETFONT, (WPARAM)fnt, TRUE);

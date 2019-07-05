@@ -14,19 +14,19 @@ inline void Deleter::operator()(const T* obj)
 		delete obj;
 }
 
-class SingletonDeleter
+class CustomCast
 {
 public:
-	template <class T>
-	void operator()(T* obj);
+	template<typename Target, typename Source>
+	static Target brute_cast(const Source);
 };
 
-template<class T>
-inline void SingletonDeleter::operator()(T* obj)
+template<typename Target, typename Source>
+inline Target CustomCast::brute_cast(const Source s)
 {
-	if (obj)
-	{
-		obj->clear();
-		obj = nullptr;
-	}
+	if (abs((int)(sizeof(Target) - sizeof(Source))) > 4) // size adress method - 8 bit (???)
+		throw wstring(L"Types size is are identical!\n");
+	union { Target t; Source s; } u;
+	u.s = s;
+	return u.t;
 }

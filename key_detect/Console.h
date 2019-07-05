@@ -4,6 +4,7 @@
 #include "types.h"
 #include "Notify.h"
 #include "resource.h"
+#include "Thunk.h"
 
 class Console : public IHookWindow
 {
@@ -14,6 +15,7 @@ class Console : public IHookWindow
 	HMENU mainMenu;
 	wstring titleNotify;
 	map<int, function<void()>> actionsMenu;
+	SmartThunkCreator callbackWndProc;
 
 public:
 	Console():msgTaskbarRestart(-1), titleNotify(L"Осведомитель нажатий системных клавиш"){}

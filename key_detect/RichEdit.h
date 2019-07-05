@@ -5,6 +5,7 @@
 #include "IControl.h"
 #include "IData.h"
 #include "LoaderDll.h"
+#include "Thunk.h"
 
 class RichEdit;
 
@@ -17,6 +18,7 @@ class RichEdit : public IControl
 	HMENU contextMenu;
 	WNDPROC OldWndProc;
 	HGLOBAL hglbTextCopyBuf;
+	SmartThunkCreator callbackWndProc;
 
 public:
 	LRESULT MsgProc(HWND, UINT, WPARAM, LPARAM);

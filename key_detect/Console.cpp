@@ -126,9 +126,11 @@ LRESULT Console::MsgProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 void Console::init(HWND main, HINSTANCE hInst)
 {
+	callbackWndProc.reset(new ThunkCreator());
+	callbackWndProc->createNonStaticCallbackFunction(this, &Console::MsgProc);
 	WNDCLASS wc = {
 		CS_VREDRAW | CS_HREDRAW | CS_NOCLOSE,
-		(WNDPROC)WndProc,
+		(WNDPROC)callbackWndProc->getCallbackMethod(),
 		0,
 		0,
 		hInst,
@@ -136,12 +138,12 @@ void Console::init(HWND main, HINSTANCE hInst)
 		LoadCursor(hInst,IDC_ARROW),
 		GetSysColorBrush(COLOR_WINDOW),
 		NULL,
-		L"wndclass" };
+		L"ConsoleClass" };
 	RegisterClass(&wc);
 	mainMenu = CreateMenu();
 	AppendMenu(mainMenu, MF_STRING, CONSOLE_MAINMENU_SAVELOG, L"Save log");
 	AppendMenu(mainMenu, MF_STRING, CONSOLE_MAINMENU_CLEARLOG, L"Clear log");
-	hwnd = CreateWindow(L"wndclass", L"Global hook system keys", WS_OVERLAPPEDWINDOW, 64, 64, 640, 480, 0, mainMenu, hInst, 0);
+	hwnd = CreateWindow(L"ConsoleClass", L"Global hook system keys", WS_OVERLAPPEDWINDOW, 64, 64, 640, 480, 0, mainMenu, hInst, 0);
 	SetWindowLongPtr(hwnd, GWLP_USERDATA, (LONG_PTR)this);
 	contextMenu = CreatePopupMenu();
 	AppendMenu(contextMenu, MF_STRING, CONSOLE_MENU_RESTORE, L"Restore");

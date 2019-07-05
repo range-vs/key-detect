@@ -110,9 +110,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="IWindow.cpp">
-      <Filter>view\controls</Filter>
-    </ClCompile>
     <ClCompile Include="ConsoleData.cpp">
       <Filter>model</Filter>
     </ClCompile>
@@ -139,6 +136,9 @@
     </ClCompile>
     <ClCompile Include="About.cpp">
       <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="Thunk.cpp">
+      <Filter>services\memory</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

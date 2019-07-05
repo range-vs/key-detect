@@ -13,7 +13,6 @@ class Controller;
 using SmartController = usmart_pointer<Controller>;
 using CreateHookType = GlobalHook * (*)();
 using GetHookProcType = HOOKPROC (*)();
-//using SmartGlobalHook = unique_ptr<GlobalHook, SingletonDeleter>;
 using SmartGlobalHook = shared_ptr<GlobalHook>;
 
 class Controller: public IInitialize
@@ -26,7 +25,7 @@ class Controller: public IInitialize
 	usmart_pointer<LoaderDll> dll;
 	SmartGlobalHook ev;
 	SmartConsoleData model;
-	Thunk* callbackGlobalHook;
+	SmartThunkCreator callbackGlobalHook;
 
 	void sendDataForConsole();
 	Controller(const Controller&);

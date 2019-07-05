@@ -48,13 +48,13 @@
     <ClCompile Include="About.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="ConsoleData.cpp" />
-    <ClCompile Include="IWindow.cpp" />
     <ClCompile Include="LoaderDll.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Notify.cpp" />
     <ClCompile Include="RichEdit.cpp" />
     <ClCompile Include="Controller.cpp" />
     <ClCompile Include="SaveFileDialog.cpp" />
+    <ClCompile Include="Thunk.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc" />

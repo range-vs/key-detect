@@ -3,7 +3,7 @@
 void Controller::clear()
 {
 	UnhookWindowsHookEx(hCBTHook);
-	VirtualFree(callbackGlobalHook, sizeof(Thunk), MEM_DECOMMIT);
+	//VirtualFree(callbackGlobalHook, sizeof(Thunk), MEM_DECOMMIT);
 }
 
 void Controller::saveModelFromFile()
@@ -58,22 +58,12 @@ void Controller::init()
 	}
 	ev->init();
 	// create callback non-static function
-	callbackGlobalHook = reinterpret_cast<Thunk*>(VirtualAlloc(NULL,sizeof(Thunk),MEM_COMMIT,PAGE_EXECUTE_READWRITE));
-	if (!callbackGlobalHook)
-	{
-		clear();
-		throw wstring(L"Error alloc memory for hook proc!");
-	}
-	callbackGlobalHook -> stub1 = 0x0D8D;
-	callbackGlobalHook -> nThisPtr = reinterpret_cast<unsigned long>(ev.get());
-	callbackGlobalHook -> stub2 = 0xB8;
-	callbackGlobalHook -> nJumpProc = CustomCast::brute_cast<unsigned long>(&GlobalHook::MsgProc);
-	callbackGlobalHook -> stub3 = 0xE0FF;
-	FlushInstructionCache(GetCurrentProcess(), callbackGlobalHook, sizeof(Thunk));
+	callbackGlobalHook.reset(new ThunkCreator());
+	callbackGlobalHook->createNonStaticCallbackFunction(ev.get(), &GlobalHook::MsgProc);
 	// send data for dll
 	ev->createEventData(console);
 	// create hook
-	HHOOK hCBTHook = SetWindowsHookEx(WH_KEYBOARD_LL, reinterpret_cast<HOOKPROC>(callbackGlobalHook), dll->getHinstance(), NULL); // устанавливаем хук на нажатие клавиш
+	HHOOK hCBTHook = SetWindowsHookEx(WH_KEYBOARD_LL, reinterpret_cast<HOOKPROC>(callbackGlobalHook->getCallbackMethod()), dll->getHinstance(), NULL); // устанавливаем хук на нажатие клавиш
 	ev->setHHook(hCBTHook);
 	// add actions menu
 	console->addMenuAction(CONSOLE_MAINMENU_SAVELOG, function<void()>(std::bind(&Controller::saveModelFromFile, this)));
