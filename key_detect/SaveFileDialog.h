@@ -14,5 +14,6 @@ class SaveFileDialog
 public:
 	SaveFileDialog(HWND hwnd);
 	bool action();
+	void actionParameter(bool&);
 	wstring getPath();
 };

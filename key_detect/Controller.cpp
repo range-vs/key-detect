@@ -3,7 +3,6 @@
 void Controller::clear()
 {
 	UnhookWindowsHookEx(hCBTHook);
-	//VirtualFree(callbackGlobalHook, sizeof(Thunk), MEM_DECOMMIT);
 }
 
 void Controller::saveModelFromFile()
@@ -109,4 +108,4 @@ Controller::~Controller()
 	this->clear();
 }
 
-// TODO: тест - попробовать вызывать GetSaveFileName (со своим классом) в отдельном потоке
+// TODO: тест - попробовать вызывать диалог сохранения файла с помощью COM C++ MS

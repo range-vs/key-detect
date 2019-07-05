@@ -28,6 +28,11 @@ bool SaveFileDialog::action()
 	return result;
 }
 
+void SaveFileDialog::actionParameter(bool& res)
+{
+	res = this->action();
+}
+
 wstring SaveFileDialog::getPath()
 {
 	return szFile;
