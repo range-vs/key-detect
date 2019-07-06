@@ -144,7 +144,6 @@ void Console::init(HWND main, HINSTANCE hInst)
 	AppendMenu(mainMenu, MF_STRING, CONSOLE_MAINMENU_SAVELOG, L"Save log");
 	AppendMenu(mainMenu, MF_STRING, CONSOLE_MAINMENU_CLEARLOG, L"Clear log");
 	hwnd = CreateWindow(L"ConsoleClass", L"Global hook system keys", WS_OVERLAPPEDWINDOW, 64, 64, 640, 480, 0, mainMenu, hInst, 0);
-	SetWindowLongPtr(hwnd, GWLP_USERDATA, (LONG_PTR)this);
 	contextMenu = CreatePopupMenu();
 	AppendMenu(contextMenu, MF_STRING, CONSOLE_MENU_RESTORE, L"Restore");
 	AppendMenu(contextMenu, MF_STRING, CONSOLE_MENU_ABOUT, L"About");
