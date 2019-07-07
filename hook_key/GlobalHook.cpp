@@ -60,4 +60,3 @@ GlobalHook::~GlobalHook()
 {
 	OutputDebugString(L"Delete Global hook\n");
 }
-

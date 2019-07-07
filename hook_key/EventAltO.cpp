@@ -5,14 +5,14 @@ int EventAltO::run(SmartEventData gh)
 	if (GetAsyncKeyState(VK_MENU) & 0x8000)
 	{
 		data = L"Нажата комбинация alt + O\n";
-		data += gh->isAltO() ? L"\nПравый \"+\" вновь соответствует своему значению\n" : L"\nПравый \"+\" изменил своё значение на \"осв\"\n";
+		data += gh->isAltO() ? L"Правый \"+\" вновь соответствует своему значению\n" : L"Правый \"+\" изменил своё значение на \"осв\"\n";
 		gh->switchAltO();
 		time_t seconds = time(NULL);
 		tm timeinfo;
 		localtime_s(&timeinfo, &seconds);
 		char buf[500];
 		asctime_s(buf, 500, &timeinfo);
-		//data += buf;
+		date = wstring(buf, buf + 500) + L"\n\n";
 		gh->getWindow()->addNotify(data, L"Уведомление", NIM_MODIFY);
 	}
 	return 0;
@@ -20,5 +20,5 @@ int EventAltO::run(SmartEventData gh)
 
 wstring EventAltO::createData()
 {
-	return data;
+	return data + date;
 }

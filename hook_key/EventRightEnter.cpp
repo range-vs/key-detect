@@ -11,6 +11,12 @@ int EventRightEvent::run(SmartEventData gh)
 		ip.ki.dwFlags = 0;
 		SendInput(1, &ip, sizeof(INPUT)); // отправляет нажатие клавиши в верх очереди сообщений
 		isData = true;
+		time_t seconds = time(NULL);
+		tm timeinfo;
+		localtime_s(&timeinfo, &seconds);
+		char buf[500];
+		asctime_s(buf, 500, &timeinfo);
+		date = wstring(buf, buf + 500) + L"\n\n";
 		return 1;
 	}
 	isData = false;
@@ -20,6 +26,6 @@ int EventRightEvent::run(SmartEventData gh)
 wstring EventRightEvent::createData()
 {
 	if(isData)
-		return L"Нажат 'enter'(н)\n";
+		return L"Нажат 'enter'(н)\n" + date;
 	return L"";
 }
