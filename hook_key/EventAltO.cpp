@@ -2,7 +2,7 @@
 
 int EventAltO::run(SmartEventData gh)
 {
-	if (GetKeyState(160) & 0x80 || GetKeyState(161) & 0x80)
+	if (GetAsyncKeyState(VK_MENU) & 0x8000)
 	{
 		data = L"Нажата комбинация alt + O\n";
 		data += gh->isAltO() ? L"\nПравый \"+\" вновь соответствует своему значению\n" : L"\nПравый \"+\" изменил своё значение на \"осв\"\n";

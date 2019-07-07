@@ -11,7 +11,7 @@ LRESULT GlobalHook::MsgProc(int code, WPARAM wParam, LPARAM lParam)
 	hooked_key = *((KBDLLHOOKSTRUCT*)lParam);
 	int key = hooked_key.vkCode; 
 
-	if (wParam == WM_KEYDOWN || wParam == WM_KEYUP)
+	if (wParam == WM_KEYDOWN || wParam == WM_KEYUP || wParam == WM_SYSKEYDOWN || wParam == WM_SYSKEYUP)
 	{
 		int flag(-1);
 		if (key == 107 || key == 13)

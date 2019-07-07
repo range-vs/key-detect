@@ -10,8 +10,10 @@ int EventRightEvent::run(SmartEventData gh)
 		ip.ki.wVk = 0x59; // Н/Y
 		ip.ki.dwFlags = 0;
 		SendInput(1, &ip, sizeof(INPUT)); // отправляет нажатие клавиши в верх очереди сообщений
+		isData = true;
 		return 1;
 	}
+	isData = false;
 	return 0;
 }
 

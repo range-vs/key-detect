@@ -15,8 +15,8 @@ class EventsCreator
 	EventsCreator(const EventsCreator&);
 	EventsCreator& operator=(const EventsCreator&);
 	
-	static map< KeyEvents, int> eventsState;
-	static map< KeyEvents, int> generateEventsState();
+	static map< KeyEvents, pair<int, int>> eventsState;
+	static map< KeyEvents, pair<int, int>> generateEventsState();
 	static map< KeyEvents, SmartFactoryEvent> events;
 	static map< KeyEvents, SmartFactoryEvent> generateEvents();
 public:

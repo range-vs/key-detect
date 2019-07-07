@@ -2,7 +2,7 @@
 
 int EventAltN::run(SmartEventData gh)
 {
-	if (GetKeyState(160) & 0x80 || GetKeyState(161) & 0x80)
+	if (GetAsyncKeyState(VK_MENU) & 0x8000)
 	{
 		data = L"Нажата комбинация alt + N\n";
 		data += gh->isAltN() ? L"\nПравый enter вновь соответствует своему значению\n" : L"\nПравый enter изменил своё значение на 'н'\n";

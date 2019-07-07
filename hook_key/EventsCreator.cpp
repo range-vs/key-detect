@@ -1,20 +1,18 @@
 ﻿#include "EventsCreator.h"
 
-map< KeyEvents, int>EventsCreator::eventsState(EventsCreator::generateEventsState());
+map< KeyEvents, pair<int, int>>EventsCreator::eventsState(EventsCreator::generateEventsState());
 
 map<KeyEvents, SmartFactoryEvent> EventsCreator::events(EventsCreator::generateEvents());
 
-map<KeyEvents, int> EventsCreator::generateEventsState()
+map<KeyEvents, pair<int, int>> EventsCreator::generateEventsState()
 {
-	return map<KeyEvents, int>
+	return map<KeyEvents, pair<int, int>>
 	{
-		{KeyEvents(78, -1), WM_KEYUP },
-		{ KeyEvents(79, -1), WM_KEYUP },
-		/*{ KeyEvents(13, 1),WM_KEYUP },
-		{ KeyEvents(107, 0), WM_KEYUP },*/
-		{ KeyEvents(20, -1), WM_KEYUP },
-		{ KeyEvents(144, -1), WM_KEYUP },
-		{ KeyEvents(145, -1), WM_KEYUP }
+		{KeyEvents(78, -1), { WM_SYSKEYUP, WM_SYSKEYDOWN }},
+		{ KeyEvents(79, -1), {WM_SYSKEYUP, WM_SYSKEYDOWN} },
+		{ KeyEvents(20, -1), {WM_KEYUP, WM_KEYDOWN} },
+		{ KeyEvents(144, -1), {WM_KEYUP, WM_KEYDOWN} },
+		{ KeyEvents(145, -1), {WM_KEYUP, WM_KEYDOWN} }
 	};
 }
 
@@ -41,10 +39,10 @@ SmartEvent EventsCreator::create(int message, int currentCode, int flag)
 			return events[keyEvent]->create();
 		return nullptr;
 	}
-	else if (eventsState[keyEvent] != message)
+	else if (eventsState[keyEvent].first != message)
 	{
-		eventsState[keyEvent] = message;
-		if (message == WM_KEYDOWN)
+		eventsState[keyEvent].first = message;
+		if (message == eventsState[keyEvent].second)
 		{
 			if (events.find(keyEvent) != events.end())
 				return events[keyEvent]->create();
