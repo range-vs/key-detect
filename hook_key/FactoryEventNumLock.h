@@ -6,5 +6,5 @@
 class FactoryEventNumLock : public FactoryEvent
 {
 public:
-	SmartEvent create();
+	SmartEvent create() override;
 };

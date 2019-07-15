@@ -19,11 +19,11 @@ class Console : public IHookWindow
 
 public:
 	Console():msgTaskbarRestart(-1), titleNotify(L"Осведомитель нажатий системных клавиш"), mainMenu(NULL), contextMenu(NULL), hwnd(NULL){}
-	LRESULT MsgProc(HWND, UINT, WPARAM, LPARAM);
-	void init(HWND main, HINSTANCE hInst);
-	void addNotify(const wstring& message, const wstring& title, UINT type);
-	void addControl(SmartControl);
-	void mailingEvents(SmartConsoleData);
-	void addMenuAction(int, function<void()>);
-	HWND& getDescriptor();
+	LRESULT MsgProc(HWND, UINT, WPARAM, LPARAM) override;
+	void init(HWND main, HINSTANCE hInst) override;
+	void addNotify(const wstring& message, const wstring& title, UINT type) override;
+	void addControl(SmartControl) override;
+	void mailingEvents(SmartConsoleData) override;
+	void addMenuAction(int, function<void()>) override;
+	HWND& getDescriptor() override;
 };

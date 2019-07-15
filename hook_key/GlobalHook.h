@@ -13,12 +13,12 @@ class GlobalHook: public IHook, public IInitialize
 	SmartEventData eventData;
 
 public:
-	void createEventData(SmartHookWindow);
-	LRESULT MsgProc(int, WPARAM, LPARAM);
-	void init();
+	void createEventData(SmartHookWindow) override;
+	LRESULT MsgProc(int, WPARAM, LPARAM) override;
+	void init() override;
 
-	void addEvent(SmartEvent);
-	vector<SmartEvent>& getEvents();
-	void setHHook(HHOOK);
+	void addEvent(SmartEvent) override;
+	vector<SmartEvent>& getEvents() override;
+	void setHHook(HHOOK) override;
 	~GlobalHook();
 };

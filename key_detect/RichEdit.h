@@ -22,8 +22,8 @@ class RichEdit : public IControl
 
 public:
 	RichEdit():OldWndProc(NULL), hwnd(NULL), hglbTextCopyBuf(NULL), contextMenu(NULL){}
-	LRESULT MsgProc(HWND, UINT, WPARAM, LPARAM);
-	void init(HWND, HINSTANCE);
-	void addData(SmartConsoleData);
-	HWND& getDescriptor();
+	LRESULT MsgProc(HWND, UINT, WPARAM, LPARAM) override;
+	void init(HWND, HINSTANCE) override;
+	void addData(SmartConsoleData) override;
+	HWND& getDescriptor() override;
 };
