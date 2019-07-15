@@ -2,7 +2,7 @@
 
 #include "GlobalHook.h"
 
-extern "C"  class Export
+ class Export
 {
 public:
 	static __declspec(dllexport) IHook* CreateHook();
