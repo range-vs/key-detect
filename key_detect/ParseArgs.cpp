@@ -5,13 +5,13 @@ void ParseArgs::initDefault()
 	_args.insert({ L"ms", 5 });
 }
 
-std::vector<std::wstring> ParseArgs::split(const std::wstring& input, wchar_t s)
+vector<wstring> ParseArgs::split(const wstring& input, wchar_t s)
 {
-	std::wstringstream test(input);
-	std::wstring segment;
-	std::vector<std::wstring> seglist;
+	wstringstream test(input);
+	wstring segment;
+	vector<wstring> seglist;
 
-	while (std::getline(test, segment, s))
+	while (getline(test, segment, s))
 		if(segment.size() != 0)
 			seglist.push_back(segment);
 	return seglist;
