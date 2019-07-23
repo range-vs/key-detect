@@ -33,7 +33,7 @@ class Controller: public IInitialize
 public:
 	Controller(HINSTANCE);
 	void init();
-	MSG run();
+	MSG run(int mode_show);
 	void clear();
 
 	void saveModelFromFile();

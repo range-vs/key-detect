@@ -72,10 +72,10 @@ void Controller::init()
 	console->addMenuAction(CONSOLE_MENU_ABOUT, function<void()>(std::bind(&Controller::showAbout, this)));
 }
 
-MSG Controller::run()
+MSG Controller::run(int mode_show)
 {
 	MSG msg;
-	ShowWindow(console->getDescriptor(), SW_SHOW); 
+	ShowWindow(console->getDescriptor(), mode_show);
 	UpdateWindow(console->getDescriptor());
 	while (true)
 	{

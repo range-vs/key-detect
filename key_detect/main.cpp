@@ -1,14 +1,17 @@
 ﻿#include "Controller.h"
+#include "ParseArgs.h"
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPInst, char* line, int show)
 {
 	MSG result = { 0 };
 	SmartController work;
+	SmartParseArgs args;
 	try
 	{
+		args.reset(new ParseArgs(line));
 		work.reset(new Controller(hInstance));
 		work->init();
-		result = work->run();
+		result = work->run(args->getValue(L"ms"));
 	}
 	catch (wstring& ex)
 	{

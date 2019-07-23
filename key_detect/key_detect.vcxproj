@@ -35,6 +35,7 @@
     <ClInclude Include="IWindow.h" />
     <ClInclude Include="LoaderDll.h" />
     <ClInclude Include="Notify.h" />
+    <ClInclude Include="ParseArgs.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="RichEdit.h" />
     <ClInclude Include="SaveFileDialog.h" />
@@ -51,6 +52,7 @@
     <ClCompile Include="LoaderDll.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Notify.cpp" />
+    <ClCompile Include="ParseArgs.cpp" />
     <ClCompile Include="RichEdit.cpp" />
     <ClCompile Include="Controller.cpp" />
     <ClCompile Include="SaveFileDialog.cpp" />

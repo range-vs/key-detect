@@ -108,6 +108,9 @@
     <ClInclude Include="Thunk.h">
       <Filter>services\memory</Filter>
     </ClInclude>
+    <ClInclude Include="ParseArgs.h">
+      <Filter>services</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleData.cpp">
@@ -139,6 +142,9 @@
     </ClCompile>
     <ClCompile Include="Thunk.cpp">
       <Filter>services\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="ParseArgs.cpp">
+      <Filter>services</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
