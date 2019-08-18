@@ -87,7 +87,10 @@ MSG Controller::run(int mode_show)
 		if (msg.message == WM_QUIT)
 			break;
 		else
+		{
+			Sleep(10);
 			sendDataForConsole();
+		}
 	}
 	return msg;
 }
