@@ -18,5 +18,5 @@ public:
 	vector<wstring>::iterator getStartNewData();
 	int getNewCountData()const;
 	void clearNewCountData();
-	void addData(wstring l);
+	void addData(const wstring& l);
 };

@@ -14,7 +14,7 @@ void Controller::saveModelFromFile()
 		wofstream file(saveFileDialog.getPath());
 		locale ruLocale("rus_rus.1251");
 		file.imbue(ruLocale);
-		copy(model->getData().begin(), model->getData().end(), std::ostream_iterator<wstring, wchar_t>(file)); 
+		copy(model->getData().begin(), model->getData().end(), std::ostream_iterator<wstring, wchar_t>(file));
 	}
 }
 

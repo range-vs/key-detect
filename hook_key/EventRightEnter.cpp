@@ -16,7 +16,7 @@ int EventRightEvent::run(SmartEventData gh)
 		localtime_s(&timeinfo, &seconds);
 		char buf[500];
 		asctime_s(buf, 500, &timeinfo);
-		date = wstring(buf, buf + 500) + L"\n\n";
+		date = wstring(buf, buf + strlen(buf)) + L"\n";
 		return 1;
 	}
 	isData = false;

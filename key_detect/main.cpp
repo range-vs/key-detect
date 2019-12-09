@@ -6,6 +6,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPInst, char* line, int show)
 	MSG result = { 0 };
 	SmartController work;
 	SmartParseArgs args;
+
 	try
 	{
 		args.reset(new ParseArgs(line));

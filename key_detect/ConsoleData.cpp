@@ -27,7 +27,7 @@ void ConsoleData::clearNewCountData()
 	newDataCounter = 0;
 }
 
-void ConsoleData::addData(wstring l)
+void ConsoleData::addData(const wstring& l)
 {
 	data.push_back(l);
 	newDataCounter++;

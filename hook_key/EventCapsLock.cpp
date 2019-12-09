@@ -12,7 +12,7 @@ int EventCapsLock::run(SmartEventData gh)
 	localtime_s(&timeinfo, &seconds);
 	char buf[500];
 	asctime_s(buf, 500, &timeinfo);
-	date = wstring(buf, buf + 500) + L"\n\n";
+	date = wstring(buf, buf + strlen(buf)) + L"\n";
 	gh->getWindow()->addNotify(data, L"Уведомление", NIM_MODIFY);
 	return 0;
 }
