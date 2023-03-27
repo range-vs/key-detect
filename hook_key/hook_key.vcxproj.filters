@@ -67,6 +67,18 @@
     <ClInclude Include="EventData.h">
       <Filter>model\events</Filter>
     </ClInclude>
+    <ClInclude Include="EventAltP.h">
+      <Filter>model\events</Filter>
+    </ClInclude>
+    <ClInclude Include="FactoryEventAltP.h">
+      <Filter>model\events\factory_method</Filter>
+    </ClInclude>
+    <ClInclude Include="EventRightCtrl.h">
+      <Filter>model\events</Filter>
+    </ClInclude>
+    <ClInclude Include="FactoryEventRightCtrl.h">
+      <Filter>model\events\factory_method</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="export.cpp">
@@ -125,6 +137,18 @@
     </ClCompile>
     <ClCompile Include="EventData.cpp">
       <Filter>model\events</Filter>
+    </ClCompile>
+    <ClCompile Include="EventAltP.cpp">
+      <Filter>model\events</Filter>
+    </ClCompile>
+    <ClCompile Include="FactoryEventAltP.cpp">
+      <Filter>model\events\factory_method</Filter>
+    </ClCompile>
+    <ClCompile Include="EventRightCtrl.cpp">
+      <Filter>model\events</Filter>
+    </ClCompile>
+    <ClCompile Include="FactoryEventRightCtrl.cpp">
+      <Filter>model\events\factory_method</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

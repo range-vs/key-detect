@@ -2,5 +2,5 @@
 
 SmartEvent FactoryEventRightEnter::create()
 {
-	return SmartEvent(new EventRightEvent());
+	return SmartEvent(new EventRightEnter());
 }

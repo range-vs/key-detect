@@ -2,9 +2,9 @@
 
 #include "GlobalHook.h"
 
-class EventRightEnter : public IEvent
+class EventAltP : public IEvent
 {
-	bool isData;
+	wstring data;
 	wstring date;
 public:
 	int run(SmartEventData gh) override;

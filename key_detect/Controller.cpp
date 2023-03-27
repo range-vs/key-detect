@@ -26,7 +26,7 @@ void Controller::clearModelAndRichEdit()
 
 void Controller::showAbout()
 {
-	About about(console->getDescriptor(), L"О программе", L"\"Перехватчик системных нажатий\"\nСоздатель: range (Трубников Иван), 2019 v 0.5 (c)");
+	About about(console->getDescriptor(), L"О программе", L"\"Перехватчик системных нажатий\"\nСоздатель: range (Трубников Иван), 2023 v 0.6 (c)");
 	about.show();
 }
 

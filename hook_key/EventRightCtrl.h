@@ -2,7 +2,7 @@
 
 #include "GlobalHook.h"
 
-class EventRightEnter : public IEvent
+class EventRightCtrl : public IEvent
 {
 	bool isData;
 	wstring date;

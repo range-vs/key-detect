@@ -2,10 +2,12 @@
 
 #include "FactoryEventAltN.h"
 #include "FactoryEventAltO.h"
+#include "FactoryEventAltP.h"
 #include "FactoryEventCapsLock.h"
 #include "FactoryEventNumLock.h"
 #include "FactoryEventRightEnter.h"
 #include "FactoryEventRightPlus.h"
+#include "FactoryEventRightCtrl.h"
 #include "FactoryEventScrollLock.h"
 #include "KeyEvents.h"
 

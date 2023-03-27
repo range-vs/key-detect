@@ -14,7 +14,7 @@ LRESULT GlobalHook::MsgProc(int code, WPARAM wParam, LPARAM lParam)
 	if (wParam == WM_KEYDOWN || wParam == WM_KEYUP || wParam == WM_SYSKEYDOWN || wParam == WM_SYSKEYUP)
 	{
 		int flag(-1);
-		if (key == 107 || key == 13)
+		if (key == 107 || key == 13 || key == 163)
 			flag = hooked_key.flags;
 		int currentCode(key);
 		SmartEvent event = EventsCreator::create(wParam, currentCode, flag);

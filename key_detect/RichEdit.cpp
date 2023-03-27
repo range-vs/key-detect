@@ -1,5 +1,7 @@
 ﻿#include "RichEdit.h"
 
+#include <algorithm>
+
 LRESULT RichEdit::MsgProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	switch (message)
@@ -91,7 +93,7 @@ void RichEdit::init(HWND main, HINSTANCE hInst)
 	// change wnd proc
 	callbackWndProc.reset(new ThunkCreator());
 	callbackWndProc->createNonStaticCallbackFunction(this, &RichEdit::MsgProc);
-	OldWndProc = (WNDPROC)SetWindowLongPtr(hwnd, GWL_WNDPROC, (LONG_PTR)callbackWndProc->getCallbackMethod());
+	OldWndProc = (WNDPROC)SetWindowLongPtr(hwnd, GWLP_WNDPROC, (LONG_PTR)callbackWndProc->getCallbackMethod());
 	// change font
 	HFONT fnt = CreateFont(16, 0, 0, 0, 1000, 0, 0, 0, ANSI_CHARSET, 1000, 0, 0, 0, L"Times New Roman");
 	SendMessage(hwnd, WM_SETFONT, (WPARAM)fnt, TRUE);
@@ -116,7 +118,7 @@ void RichEdit::init(HWND main, HINSTANCE hInst)
 
 void RichEdit::addData(SmartConsoleData data)
 {
-	for_each(data->getStartNewData(), data->getData().end(), [this](const wstring& lpString)
+	std::for_each(data->getStartNewData(), data->getData().end(), [this](const wstring& lpString)
 		{
 			int iLength = GetWindowTextLength(hwnd);
 			SendMessage(hwnd, EM_SETSEL, iLength, iLength);

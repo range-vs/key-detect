@@ -147,9 +147,11 @@
   <ItemGroup>
     <ClInclude Include="EventAltN.h" />
     <ClInclude Include="EventAltO.h" />
+    <ClInclude Include="EventAltP.h" />
     <ClInclude Include="EventCapsLock.h" />
     <ClInclude Include="EventData.h" />
     <ClInclude Include="EventNumLock.h" />
+    <ClInclude Include="EventRightCtrl.h" />
     <ClInclude Include="EventRightEnter.h" />
     <ClInclude Include="EventRightPlus.h" />
     <ClInclude Include="EventsCreator.h" />
@@ -158,8 +160,10 @@
     <ClInclude Include="FactoryEvent.h" />
     <ClInclude Include="FactoryEventAltN.h" />
     <ClInclude Include="FactoryEventAltO.h" />
+    <ClInclude Include="FactoryEventAltP.h" />
     <ClInclude Include="FactoryEventCapsLock.h" />
     <ClInclude Include="FactoryEventNumLock.h" />
+    <ClInclude Include="FactoryEventRightCtrl.h" />
     <ClInclude Include="FactoryEventRightEnter.h" />
     <ClInclude Include="FactoryEventRightPlus.h" />
     <ClInclude Include="FactoryEventScrollLock.h" />
@@ -171,9 +175,11 @@
   <ItemGroup>
     <ClCompile Include="EventAltN.cpp" />
     <ClCompile Include="EventAltO.cpp" />
+    <ClCompile Include="EventAltP.cpp" />
     <ClCompile Include="EventCapsLock.cpp" />
     <ClCompile Include="EventData.cpp" />
     <ClCompile Include="EventNumLock.cpp" />
+    <ClCompile Include="EventRightCtrl.cpp" />
     <ClCompile Include="EventRightEnter.cpp" />
     <ClCompile Include="EventRightPlus.cpp" />
     <ClCompile Include="EventsCreator.cpp" />
@@ -181,8 +187,10 @@
     <ClCompile Include="export.cpp" />
     <ClCompile Include="FactoryEventAltN.cpp" />
     <ClCompile Include="FactoryEventAltO.cpp" />
+    <ClCompile Include="FactoryEventAltP.cpp" />
     <ClCompile Include="FactoryEventCapsLock.cpp" />
     <ClCompile Include="FactoryEventNumLock.cpp" />
+    <ClCompile Include="FactoryEventRightCtrl.cpp" />
     <ClCompile Include="FactoryEventRightEnter.cpp" />
     <ClCompile Include="FactoryEventRightPlus.cpp" />
     <ClCompile Include="FactoryEventScrollLock.cpp" />

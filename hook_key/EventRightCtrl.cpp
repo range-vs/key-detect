@@ -1,13 +1,13 @@
-﻿#include "EventRightEnter.h"
+﻿#include "EventRightCtrl.h"
 
-int EventRightEnter::run(SmartEventData gh)
+int EventRightCtrl::run(SmartEventData gh)
 {
 	if (gh->isAltN())
 	{
 		INPUT ip;
 		ip.type = INPUT_KEYBOARD;
 		ip.ki.time = 0;
-		ip.ki.wVk = 0x59; // Н/Y
+		ip.ki.wVk = 0x4D; // m/ь
 		ip.ki.dwFlags = 0;
 		SendInput(1, &ip, sizeof(INPUT)); // отправляет нажатие клавиши в верх очереди сообщений
 		isData = true;
@@ -23,7 +23,7 @@ int EventRightEnter::run(SmartEventData gh)
 	return 0;
 }
 
-wstring EventRightEnter::createData()
+wstring EventRightCtrl::createData()
 {
 	if(isData)
 		return L"Нажат 'enter'(н)\n" + date;
